@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">PoalimTest</string>
+    <string name="removed_from_favorite">The movie removed from liked list</string>
+    <string name="error_removed_from_favorite">Failed to unlike the movie</string>
+    <string name="added_to_favorite">The movie added to the like list</string>
+    <string name="error_added_to_favorite">Failed to like the movie</string>
+    <string name="movies">Movies</string>
+    <string name="favorite_movies">Liked movies</string>
+    <string name="release_date">Release date\n%s</string>
+    <string name="description">Description</string>
+    <string name="rating">Rating\n%s</string>
+    <string name="not_available">N/A</string>
+    <string name="connection_error">No Internet Connection!</string>
+    <string name="reconnect_error">Please reconnect to the internet</string>
+</resources>

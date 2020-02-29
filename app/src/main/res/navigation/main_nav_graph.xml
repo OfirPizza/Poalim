@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/MovieFragment">
+
+
+    <action
+        android:id="@+id/navigation_movies"
+        app:destination="@id/MovieFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/main_nav_graph"
+        app:popUpToInclusive="true" />
+
+
+    <action
+        android:id="@+id/navigation_favorite_movies"
+        app:destination="@id/FavoriteMoviesFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/main_nav_graph"
+        app:popUpToInclusive="true" />
+
+
+    <fragment
+        android:id="@+id/MovieFragment"
+        android:name="com.example.poalimtest.ui.movieList.MovieFragment"
+        android:label="MovieListFragment"
+        tool:layout="@layout/fragment_movie_list">
+
+
+        <action
+            android:id="@+id/action_MovieFragment_to_MovieInfoFragment"
+            app:destination="@id/MovieInfoFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/FavoriteMoviesFragment"
+        android:name="com.example.poalimtest.ui.favoriteMovies.FavoriteMoviesFragment"
+        android:label="FavoriteMoviesFragment"
+        tool:layout="@layout/fragment_favorite_movies">
+
+
+        <action
+            android:id="@+id/action_to_MovieInfoFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:destination="@id/MovieInfoFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/MovieInfoFragment"
+        android:name="com.example.poalimtest.ui.movie.MovieDetailsFragment"
+        android:label="MovieInfoFragment"
+        tool:layout="@layout/fragment_movie_details">
+
+        <argument
+            android:name="movieItem"
+            app:argType="com.example.poalimtest.ui.movieList.model.MovieUiItemModel"
+            app:nullable="false" />
+    </fragment>
+
+</navigation>
